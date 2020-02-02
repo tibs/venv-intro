@@ -80,6 +80,14 @@ running them both at the same time.
 Virtual environments are designed to make it easy to handle this, and also
 relatively obvious that you are doing so.
 
+Managing dependencies
+---------------------
+
+A virtual environment lets you be explicit about what you have installed, and
+that makes it easier to produce a proper package when you're developing.
+
+``pip freeze`` and ``pipdeptree``
+
 But also, tidiness
 ------------------
 
@@ -92,14 +100,6 @@ number of Python packages (particularly the machine learning case), which
 don't overlap much. There's no particular reason to have the unnecessary
 packages available, and if we constrain our workspace a bit, it makes it
 easier to reason about problems when they do occur.
-
-Managing dependencies
----------------------
-
-A virtual environment lets you be explicit about what you have installed, and
-that makes it easier to produce a proper package when you're developing.
-
-``pip freeze`` and ``pipdeptree``
 
 Actual use cases
 ----------------
@@ -550,8 +550,8 @@ Back in the original virtual environment, after installing ``requests``:
 
 .. code:: bash
 
-  tibs ~/temp$ source venv/bin/activate.fish                                              I
-  (venv) tibs ~/temp$ pip freeze                                                          I
+  tibs ~/temp$ source venv/bin/activate.fish
+  (venv) tibs ~/temp$ pip freeze
   certifi==2019.11.28
   chardet==3.0.4
   idna==2.8
@@ -1363,7 +1363,7 @@ interpreters, and that will include those provided by your virtual
 environments.
 
 `Using Python environments in VS Code`_ explains how it decides where to look,
-and also how to specify a Python interpreter that it cannout automatically
+and also how to specify a Python interpreter that it cannot automatically
 find.
 
 If you are working with a VS Code "workspace", then it will automatically find a
@@ -1399,10 +1399,8 @@ Atom
 
 .. _Atom: https://atom.io/
 
-Atom_ ...
-
-There appear to be more than one packages that support virtual environments
-for Python in atom. I'm assuimg that if you use atom you know your way around
+There appear to be multiple packages that support virtual environments
+for Python in atom_. I'm assuimg that if you use atom you know your way around
 the package system.
 
 Jupyter notebook
