@@ -1202,6 +1202,26 @@ For example:
 
 ----
 
+What happens when I upgrade Python?
+-----------------------------------
+
+That is, if the older Python "disappears" (as will generally happen with a
+``homebrew`` upgrade on a Mac, for instance), do my virtual environments just
+stop working?
+
+Well, generally, yes, but...
+
+...
+
+----
+
+End of *awkward* questions
+--------------------------
+
+.. 
+
+----
+
 The venv directory and version control systems
 ----------------------------------------------
 

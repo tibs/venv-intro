@@ -1470,7 +1470,6 @@ virtual environment will give the error message::
 
   ERROR: Could not find an activated virtualenv (required).
 
-
 Do I *need* to activate the virtual environment?
 ------------------------------------------------
 
@@ -1513,6 +1512,27 @@ For example:
   (pydep) tibs ~/temp$ deactivate
   tibs ~/temp$ pydep/bin/pipdeptree --version
   0.13.2
+
+What happens when I upgrade Python?
+-----------------------------------
+
+That is, if the older Python "disappears" (as will generally happen with a
+``homebrew`` upgrade on a Mac, for instance), do my virtual environments just
+stop working?
+
+Well, generally, yes, but...
+
+If it's a basic virtual environment, then yes, it will stop working, and the
+best / simplest thing to do is just to recreate it by hand.
+
+If it's a pipenv or poetry virtual environment, then:
+
+* pipenv ...
+
+* poetry ...
+
+(Also, if this is a problem you keep having, consider using pyenv_, which is
+briefly discussed under `Multiple Pythons`_ below.
 
 The venv directory and version control systems
 ==============================================
@@ -1816,3 +1836,11 @@ PyPi_.
 
 .. _`Python projects with Poetry and VSCode`:
    https://www.pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-1/
+
+The ``pyproject.toml`` file that poetry uses is actually part of the future of
+Python project specification. See `PEP-518`_ (Specifying Minimum Build System
+Requirements for Python Projects) and also `PEP-517`_ (A build-system
+independent format for source trees). 
+
+.. _`PEP-518`: https://www.python.org/dev/peps/pep-0518/
+.. _`PEP-517`: https://www.python.org/dev/peps/pep-0517/
