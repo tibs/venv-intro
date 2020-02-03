@@ -233,13 +233,13 @@ Before going any further, let's unpack that command line a bit.
 
   .. code:: bash
 
-    $ python3.6 -m venv venv36
+    $ python3.6 -m venv venv
 
   or:
 
   .. code:: bash
 
-    $ python3.7.1 -m venv venv371
+    $ python3.7.1 -m venv venv
 
 * ``-m venv`` tells Python to load the ``venv`` module and run it.
 
@@ -254,9 +254,9 @@ Before going any further, let's unpack that command line a bit.
   In the case of ``venv.py``, that "do something" is to create the setup for a
   virtual environment for this particular Python.
 
-* ``venv`` is the name of the directory to create which will hold the
-  "workings" of the virtual environment. I'll talk about how to choose a name
-  for this directory, and where to put it, later on, but for now the name
+* that last ``venv`` is the name of the directory to create which will hold
+  the "workings" of the virtual environment. I'll talk about how to choose a
+  name for this directory, and where to put it, later on, but for now the name
   ``venv`` is fairly self-explanatory, and the default place, the current
   directory, is what we want.
 
@@ -1531,11 +1531,110 @@ Well, generally, yes, but...
 If it's a basic virtual environment, then yes, it will stop working, and the
 best / simplest thing to do is just to recreate it by hand.
 
+.. code:: bash
+
+   tibs ~/temp$ brew install python@3.8    # installs it into /usr/local/opt/python@3.8
+   tibs ~/temp$ set -g fish_user_paths "/usr/local/opt/python@3.8/bin" $fish_user_paths'
+
+and now Python3.8 is what I get (in that shell) when I type ``python3``
+
 If it's a pipenv or poetry virtual environment, then:
 
-* pipenv ...
+Using pipenv
+~~~~~~~~~~~~
 
-* poetry ...
+Remember that our ``Pipfile`` file looks something like::
+
+  [[source]]
+  name = "pypi"
+  url = "https://pypi.org/simple"
+  verify_ssl = true
+
+  [dev-packages]
+
+  [packages]
+  requests = "*"
+
+  [requires]
+  python_version = "3.7"
+
+I can edit the ``Pipfile`` to change the requested version of Python, and
+then:
+
+.. code:: bash
+
+  tibs ~/temp$ pipenv --rm
+  Removing virtualenv (/Users/tibs/.local/share/virtualenvs/temp--1EXmzEU)…
+
+.. code:: bash
+
+  tibs ~/temp$ pipenv shell
+  Creating a virtualenv for this project…
+  Pipfile: /Users/tibs/temp/Pipfile
+  Using /usr/local/opt/python@3.8/bin/python3 (3.8.1) to create virtualenv…
+  ? Creating virtual environment...Already using interpreter /usr/local/opt/python@3.8/bin/python3.8
+  Using base prefix '/usr/local/Cellar/python@3.8/3.8.1/Frameworks/Python.framework/Versions/3.8'
+  New python executable in /Users/tibs/.local/share/virtualenvs/temp--1EXmzEU/bin/python3.8
+  Also creating executable in /Users/tibs/.local/share/virtualenvs/temp--1EXmzEU/bin/python
+  Installing setuptools, pip, wheel...
+  done.
+  Running virtualenv with interpreter /usr/local/opt/python@3.8/bin/python3
+
+  ? Successfully created virtual environment!
+  Virtualenv location: /Users/tibs/.local/share/virtualenvs/temp--1EXmzEU
+  Launching subshell in virtual environment…
+  Welcome to fish, the friendly interactive shell
+  tibs ~/temp$  source /Users/tibs/.local/share/virtualenvs/temp--1EXmzEU/bin/activate.fish
+  (temp) tibs ~/temp$
+
+and now ``python`` is 3.8.
+
+Using poetry
+~~~~~~~~~~~~
+
+Remember that our ``pyproject.toml`` file looks like::
+
+  [tool.poetry]
+  name = "temp"
+  version = "0.1.0"
+  description = ""
+  authors = ["Tibs <tibs@tonyibbs.co.uk>"]
+  license = "MIT"
+
+  [tool.poetry.dependencies]
+  python = "^3.7"
+  requests = "^2.22.0"
+
+  [tool.poetry.dev-dependencies]
+
+  [build-system]
+  requires = ["poetry>=0.12"]
+  build-backend = "poetry.masonry.api"
+
+I can edit the ``pyproject.toml`` file to change the requested version of
+Python, and then:
+
+.. code:: bash
+
+   tibs ~/temp$ poetry env remove python3.7
+   Deleted virtualenv: /Users/tibs/Library/Caches/pypoetry/virtualenvs/temp-PD0d5gaI-py3.7
+
+.. code:: bash
+
+  tibs ~/temp$ poetry shell
+  The currently activated Python version 3.7.6 is not supported by the project (^3.8).
+  Trying to find and use a compatible version.
+  Using python3 (3.8.1)
+  Creating virtualenv temp-PD0d5gaI-py3.8 in /Users/tibs/Library/Caches/pypoetry/virtualenvs
+  Spawning shell within /Users/tibs/Library/Caches/pypoetry/virtualenvs/temp-PD0d5gaI-py3.8
+  Welcome to fish, the friendly interactive shell
+  tibs ~/temp$ source /Users/tibs/Library/Caches/pypoetry/virtualenvs/temp-PD0d5gaI-py3.8/bin/activate.fish
+
+and now ``python`` is 3.8.
+
+  
+Also...
+~~~~~~~
 
 (Also, if this is a problem you keep having, consider using pyenv_, which is
 briefly discussed under `Multiple Pythons`_ below.

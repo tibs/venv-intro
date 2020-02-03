@@ -137,13 +137,13 @@ and assuming I've got them both installed, I could do:
 
 .. code:: bash
 
-  $ python3.6 -m venv venv36
+  $ python3.6 -m venv venv
 
 or:
 
 .. code:: bash
 
-  $ python3.7.1 -m venv venv371
+  $ python3.7.1 -m venv venv
 
 ----
 
@@ -168,13 +168,8 @@ virtual environment for this particular Python.
 ``python3 -m venv`` **venv**
 ----------------------------
 
-That lst ``venv`` is the name of the directory to create which will hold the
-"workings" of the virtual environment. I'll talk about how to choose a name
-for this directory, and where to put it, later on, but for now the name
-``venv`` is fairly self-explanatory, and the default place, the current
-directory, is what we want.
-
-
+That last ``venv`` is the name of the directory to create which will hold the
+"workings" of the virtual environment.
 
 ----
 
@@ -196,25 +191,20 @@ Creating the directory doesn't put into the virtual environment.
 
 We need to activate it:
 
+* Bash shell: ``source venv/bin/activate``
+* CShell: ``source venv/bin/activate.csh``
+* Fish shell: ``source venv/bin/activate.fish``
+* Windows CMD.EXE: ``venv\Scripts\activate.bat``
+* Windows Powershell: ``venv\Scripts\Activate.ps1``
+
+----
+
 .. code:: bash
 
   tibs ~/temp$ source venv/bin/activate.fish
   (venv) tibs ~/temp$
 
 Note how the prompt has changed.
-
-----
-
-Other variations on activation
-------------------------------
-
-Bash shell: ``source venv/bin/activate``
-
-CShell: ``source venv/bin/activate.csh``
-
-Windows CMD.EXE: ``venv\Scripts\activate.bat``
-
-Windows Powershell: ``venv\Scripts\Activate.ps1``
 
 ----
 
@@ -225,6 +215,7 @@ What has changed? (apart from the prompt)
 
   (venv) tibs ~/temp$ python3 --version
   Python 3.7.6
+
   (venv) tibs ~/temp$ python --version
   Python 3.7.6
 
@@ -232,6 +223,7 @@ What has changed? (apart from the prompt)
 
   (venv) tibs ~/temp$ which python3
   /Users/tibs/temp/venv/bin/python3
+
   (venv) tibs ~/temp$ which python
   /Users/tibs/temp/venv/bin/python
 
@@ -260,8 +252,20 @@ Let's install requests
 
 ----
 
-And upgrade pip
----------------
+That last bit said:
+
+.. code:: bash
+
+  WARNING: You are using pip version 19.2.3, however
+      version 20.0.2 is available.
+  You should consider upgrading via the 'pip install
+      --upgrade pip' command.
+  
+
+----
+
+Let's upgrade pip
+-----------------
 
 .. code:: bash
 
@@ -355,23 +359,39 @@ The bin directory
 .. code:: bash
 
   tibs ~/temp$ ls -F venv/bin/
-  activate          chardetect*       pip*              python@
-  activate.csh      easy_install*     pip3*             python3@
-  activate.fish     easy_install-3.7* pip3.7*
+  activate          easy_install*         pip3.7*
+  activate.csh      easy_install-3.7*     python@
+  activate.fish     pip*                  python3@
+  chardetect*       pip3*
 
 .. code:: bash
 
   tibs ~/temp$ ls -l venv/bin/python
-  lrwxr-xr-x  1 tibs  staff  7 19 Jan 16:50 venv/bin/python -> python3
+  lrwxr-xr-x  1 tibs  staff 7 19 Jan 16:50 venv/bin/python
+                                                -> python3
   tibs ~/temp$ ls -l venv/bin/python3
-  lrwxr-xr-x  1 tibs  staff  22 19 Jan 16:50 venv/bin/python3 -> /usr/local/bin/python3
+  lrwxr-xr-x  1 tibs  staff 22 19 Jan 16:50 venv/bin/python3
+                                   -> /usr/local/bin/python3
 
 .. Remember that on Windows this is the Script directory
 
 ----
 
-The lib directory
------------------
+The lib directory just after creating a venv
+--------------------------------------------
+
+.. code:: bash
+
+  tibs ~/temp$ ls -F venv2/lib/python3.7/site-packages/
+  __pycache__/                    pkg_resources/
+  easy_install.py                 setuptools/
+  pip/                            setuptools-41.2.0.dist-info/
+  pip-19.2.3.dist-info/
+
+----
+
+The lib directory after installing requests
+-------------------------------------------
 
 .. code:: bash
 
@@ -385,19 +405,6 @@ The lib directory
   idna/                         urllib3/
   idna-2.8.dist-info/           urllib3-1.25.8.dist-info/
   pip/
-
-----
-
-The lib directory *just after* creating a venv
-----------------------------------------------
-
-.. code:: bash
-
-  tibs ~/temp$ ls -F venv2/lib/python3.7/site-packages/
-  __pycache__/                    pkg_resources/
-  easy_install.py                 setuptools/
-  pip/                            setuptools-41.2.0.dist-info/
-  pip-19.2.3.dist-info/
 
 ----
 
@@ -606,8 +613,8 @@ package management for a project as well.
 
 ----
 
-pipenv example: 1
------------------
+pipenv example
+--------------
 
 .. code:: bash
 
@@ -624,6 +631,14 @@ pipenv example: 1
   done.
   Running virtualenv with interpreter /usr/local/bin/python3
 
+
+----
+
+pipenv example, continued
+-------------------------
+
+.. code:: bash
+
   ? Successfully created virtual environment!
   Virtualenv location: /Users/tibs/.local/share/virtualenvs/temp--1EXmzEU
   Creating a Pipfile for this project…
@@ -634,23 +649,29 @@ pipenv example: 1
   Installing dependencies from Pipfile.lock (a65489)…
   ? |||||||||||||||||||||||||||||||| 0/0 — 00:00:00
   To activate this project's virtualenv, run pipenv shell.
-  Alternatively, run a command inside the virtualenv with pipenv run.
+  Alternatively, run a command inside the virtualenv with
+  pipenv run.
 
 ----
+
+pipenv virtual environment
+--------------------------
 
 If we look in the virtual environment directory:
 
 .. code:: bash
 
-  (temp) tibs ~/temp$ ls -aF ~/.local/share/virtualenvs/temp--1EXmzEU/
-  ./        ../       .Python@  .project  bin/      include/  lib/
+  (temp) tibs ~/temp$ ls -aF \
+              ~/.local/share/virtualenvs/temp--1EXmzEU/
+  ./        .Python@  bin/      lib/
+  ../       .project  include/
 
 it is a virtualenv_ style virtual environment, not a ``venv`` style.
 
 ----
 
-pipenv example: 2
------------------
+pipenv files
+------------
 
 pipenv also creates two files in the current directory:
 
@@ -661,10 +682,10 @@ pipenv also creates two files in the current directory:
 
 ----
 
-pipenv example: 3
------------------
+pipenv Pipfile
+--------------
 
-The ``Pipfile`` gives a description of the newly created virtual environment::
+::
 
   [[source]]
   name = "pypi"
@@ -680,30 +701,30 @@ The ``Pipfile`` gives a description of the newly created virtual environment::
 
 ----
 
-pipenv example: 4
------------------
+pipenv Pipfile.lock
+-------------------
 
-The ``Pipfile.lock`` gets more specific and less human-readable::
-
+::
+  
   {
-      "_meta": {
-          "hash": {
-              "sha256": "7e7ef69da7248742e869378f8421880cf8f0017f96d94d086813baa518a65489"
-          },
-          "pipfile-spec": 6,
-          "requires": {
-              "python_version": "3.7"
-          },
-          "sources": [
-              {
-                  "name": "pypi",
-                  "url": "https://pypi.org/simple",
-                  "verify_ssl": true
-              }
-          ]
-      },
-      "default": {},
-      "develop": {}
+    "_meta": {
+     "hash": {
+       "sha256": "7e7ef69da7248742e869378f8421880cf8f0017f96d94d086813baa518a65489"
+     },
+     "pipfile-spec": 6,
+     "requires": {
+       "python_version": "3.7"
+     },
+     "sources": [
+       {
+         "name": "pypi",
+         "url": "https://pypi.org/simple",
+         "verify_ssl": true
+       }
+     ]
+    },
+    "default": {},
+    "develop": {}
   }
 
 ----
@@ -726,10 +747,10 @@ This actually starts a new shell with the virtual environment enabled in it.
 
 ----
 
-pipenv: installing something
-----------------------------
+pipenv: installing requests
+---------------------------
 
-With pipenv_, I use it (and not ``pip``) to install new packages:
+We use ``pipenv install`` (and not ``pip``) to install new packages:
 
 .. code:: bash
 
@@ -747,8 +768,8 @@ With pipenv_, I use it (and not ``pip``) to install new packages:
 
 ----
 
-pipenv: installing: 2
----------------------
+pipenv: after installing requests
+---------------------------------
 
 Now the ``Pipfile`` and ``Pipfile.lock`` have been updated - the ``Pipfile``
 to::
@@ -807,7 +828,8 @@ file that poetry requires:
 
   tibs ~/temp$ poetry init
 
-  This command will guide you through creating your pyproject.toml config.
+  This command will guide you through creating your
+    pyproject.toml config.
 
   Package name [temp]:
   Version [0.1.0]:
@@ -816,8 +838,18 @@ file that poetry requires:
   License []:  MIT
   Compatible Python versions [^3.7]:
 
-  Would you like to define your main dependencies interactively? (yes/no) [yes] no
-  Would you like to define your dev dependencies (require-dev) interactively (yes/no) [yes] no
+----
+
+poetry init, continued
+----------------------
+
+.. code:: bash
+
+  Would you like to define your main dependencies
+    interactively? (yes/no) [yes] no
+  Would you like to define your dev dependencies
+    (require-dev) interactively (yes/no) [yes] no
+    
   Generated file
 
   [tool.poetry]
@@ -826,6 +858,13 @@ file that poetry requires:
   description = ""
   authors = ["Tibs <tibs@tonyibbs.co.uk>"]
   license = "MIT"
+
+----
+
+poetry init, continued some more
+--------------------------------
+
+.. code:: bash
 
   [tool.poetry.dependencies]
   python = "^3.7"
@@ -870,7 +909,8 @@ poetry install
 .. code:: bash
 
   tibs ~/temp$ poetry install
-  Creating virtualenv temp-PD0d5gaI-py3.7 in /Users/tibs/Library/Caches/pypoetry/virtualenvs
+  Creating virtualenv temp-PD0d5gaI-py3.7 in
+      /Users/tibs/Library/Caches/pypoetry/virtualenvs
   Updating dependencies
   Resolving dependencies... (0.1s)
 
@@ -888,8 +928,17 @@ poetry: the virtual environment directory
 
 .. code:: bash
 
-  tibs ~/temp$ ls -aF /Users/tibs/Library/Caches/pypoetry/virtualenvs/temp-PD0d5gaI-py3.7/
-  ./          ../         bin/        include/    lib/        pyvenv.cfg
+  tibs ~/temp$ pushd /Users/tibs/Library/Caches/pypoetry
+
+.. code:: bash
+
+  tibs ~/temp$ ls -aF virtualenvs/temp-PD0d5gaI-py3.7/
+  ./          bin/        lib/        src/
+  ../         include/    pyvenv.cfg
+
+.. code:: bash
+
+  tibs ~/temp$ popd
           
 which tells us we've created a (modern) ``venv`` virtual environment.
 
@@ -923,7 +972,8 @@ The ``pyproject.toml`` hasn't changed, and the ``poetry.lock`` contains::
 poetry: starting the virtual environment
 ----------------------------------------
 
-We get into our virtual environment by starting a new shell using it:
+We get into our virtual environment by starting a new shell using ``poetry
+shell``:
 
 .. code:: bash
 
@@ -935,8 +985,8 @@ We get into our virtual environment by starting a new shell using it:
 
 ----
 
-poetry add
-----------
+poetry add requests
+-------------------
 
 .. code:: bash
 
@@ -959,10 +1009,10 @@ poetry add
 
 ----
 
-poetry post-add
----------------
+pyproject.toml after adding requests
+------------------------------------
 
-The ``pyproject.toml`` now lists ``requests``::
+::
 
   [tool.poetry]
   name = "temp"
@@ -981,8 +1031,13 @@ The ``pyproject.toml`` now lists ``requests``::
   requires = ["poetry>=0.12"]
   build-backend = "poetry.masonry.api"
 
-and the ``poetry.lock`` specifies the dependencies for ``requests``, the exact
-versions of packages, and various other things.
+----
+
+poetry.lock after adding requests
+---------------------------------
+
+...specifies the dependencies for ``requests``, the exact versions of
+packages, and various other things.
 
 ----
 
@@ -1004,8 +1059,8 @@ a lot more than that, but still aimed at the scientific / big data worlds.
 
 ----
 
-Which wrapper to use?
----------------------
+Summary: Which wrapper to use?
+------------------------------
 
 You don't *have* to use any of these
 
@@ -1104,7 +1159,11 @@ that's a bit beyond this document.
 Awkward questions
 -----------------
 
-..
+* What happens if I activate a virtual environment while I've got one activated?
+* Can I (deliberately) create a virtual environment that depends on another?
+* How do I stop ``pip`` from installing outside a virtual environment?
+* Do I *need* to activate the virtual environment?
+* What happens when I upgrade Python?
 
 ----
 
@@ -1214,7 +1273,15 @@ stop working?
 
 Well, generally, yes, but...
 
-...
+* pipenv: edit the Pipfile and change the version of Python, and then::
+
+    pipenv --rm
+    pipenv shell
+
+* poetry: edit the pyproject.toml and change the version of Python, and then::
+
+    poetry env remove python3.7
+    poetry shell
 
 ----
 
@@ -1266,7 +1333,8 @@ the packages in the original Python.
 
 .. code:: bash
           
-  tibs ~/temp$ python3 -m venv tertiary --system-site-packages
+  tibs ~/temp$ python3 -m venv tertiary \
+                       --system-site-packages
   tibs ~/temp$ cat tertiary/pyvenv.cfg
   home = /usr/local/bin
   include-system-site-packages = true
