@@ -101,6 +101,12 @@ don't overlap much. There's no particular reason to have the unnecessary
 packages available, and if we constrain our workspace a bit, it makes it
 easier to reason about problems when they do occur.
 
+What about upgrading Python?
+----------------------------
+
+Virtual environments don't help directly (with upgrading Python and "losing"
+the installed packages), but pipenv (check?) and poetry can.
+
 Actual use cases
 ----------------
 

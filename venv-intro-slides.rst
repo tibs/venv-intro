@@ -53,6 +53,9 @@ My reasons:
 * Being explicit about dependencies of a project
 * Being tidy
 
+and maybe a bit of help when upgrading Python (and "losing" installed
+packages)
+
 .. and some actual use cases
 
 ----
