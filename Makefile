@@ -20,12 +20,15 @@ pdf: slides
 # pair of resolutions.
 .PHONY: slides
 slides:
-	pandoc venv-intro-slides.rst -t beamer -o venv-intro-slides-4x3.pdf -V aspectratio:43
-	pandoc venv-intro-slides.rst -t beamer -o venv-intro-slides-16x9.pdf -V aspectratio:169
+	pandoc venv-intro-slides.rst -t beamer -o venv-intro-slides-4x3.pdf \
+                                     -V aspectratio:43 --highlight-style breezedark
+	pandoc venv-intro-slides.rst -t beamer -o venv-intro-slides-16x9.pdf \
+                                     -V aspectratio:169 --highlight-style breezedark
 
 .PHONY: 43
 43:
-	pandoc venv-intro-slides.rst -t beamer -o venv-intro-slides-4x3.pdf -V aspectratio:43
+	pandoc venv-intro-slides.rst -t beamer -o venv-intro-slides-4x3.pdf \
+                                     -V aspectratio:43 --highlight-style breezedark
 	open venv-intro-slides-4x3.pdf
 
 

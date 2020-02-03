@@ -1730,10 +1730,10 @@ Other tools
 ===========
 
 These are lots of other tools out there for making it easier (in some sense)
-to manage virtual environments. Three (that I have not used!) are:
+to manage virtual environments. Four (that I have not used!) are:
 
 * venv_manager_ is intended for bash and zsh users, and detects and activates
-  virtual environments are you ``cd`` into the directories that containt them
+  virtual environments as you ``cd`` into the directories that contain them
   (by default it looks for ``.venv`` directories).
   
 * direnv_ is a more powerful tool that takes actions when you ``cd`` into a

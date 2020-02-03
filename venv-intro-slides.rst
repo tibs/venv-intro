@@ -685,7 +685,7 @@ pipenv also creates two files in the current directory:
 pipenv Pipfile
 --------------
 
-::
+.. code:: ini
 
   [[source]]
   name = "pypi"
@@ -704,7 +704,7 @@ pipenv Pipfile
 pipenv Pipfile.lock
 -------------------
 
-::
+.. code:: python
   
   {
     "_meta": {
@@ -772,7 +772,9 @@ pipenv: after installing requests
 ---------------------------------
 
 Now the ``Pipfile`` and ``Pipfile.lock`` have been updated - the ``Pipfile``
-to::
+to:
+
+.. code:: ini
 
   [[source]]
   name = "pypi"
@@ -883,7 +885,9 @@ poetry init, continued some more
 pyproject.toml file
 -------------------
 
-The pyproject.toml file is indeed as described::
+The pyproject.toml file is indeed as described:
+
+.. code:: ini
 
   [tool.poetry]
   name = "temp"
@@ -957,7 +961,9 @@ Meanwhile, in the current directory, we have:
   tibs ~/temp$ ls -F
   poetry.lock     pyproject.toml
 
-The ``pyproject.toml`` hasn't changed, and the ``poetry.lock`` contains::
+The ``pyproject.toml`` hasn't changed, and the ``poetry.lock`` contains:
+
+.. code:: ini
 
   package = []
 
@@ -1012,7 +1018,7 @@ poetry add requests
 pyproject.toml after adding requests
 ------------------------------------
 
-::
+.. code:: ini
 
   [tool.poetry]
   name = "temp"
@@ -1145,7 +1151,9 @@ The simplest thing to do is to create your virtual environment, then install
 jupyter notebook within it. When you run that jupyter notebook, it will
 automatically use the Python it was installed for.
 
-For instance::
+For instance:
+
+.. code:: bash
 
   $ source .venv/bin/activate
   $ pip install jupyter
@@ -1199,11 +1207,15 @@ How do I stop ``pip`` from installing outside a virtual environment?
 --------------------------------------------------------------------
 
 It's not very well documented, but the simplest way to do this is to set the
-environment variable::
+environment variable:
+
+.. code:: bash
 
   PIP_REQUIRE_VIRTUALENV=true
 
-For instance, in your ``.bashrc`` you would add::
+For instance, in your ``.bashrc`` you would add:
+
+.. code:: bash
 
   export PIP_REQUIRE_VIRTUALENV=true
 
@@ -1374,14 +1386,11 @@ complementary.
 
 ----
 
-Other tools
------------
-
-These are lots of other tools out there for making it easier (in some sense)
-to manage virtual environments. Three (that I have not used!) are:
+Some other tools
+----------------
 
 * venv_manager_ is intended for bash and zsh users, and detects and activates
-  virtual environments are you ``cd`` into the directories that containt them
+  virtual environments as you ``cd`` into the directories that contain them
   (by default it looks for ``.venv`` directories).
   
 * direnv_ is a more powerful tool that takes actions when you ``cd`` into a
