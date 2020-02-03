@@ -1880,8 +1880,8 @@ directory to your path - for instance, in my case
 ``C:\Users\Tibs\.poetry\bin\``.
 
 
-Links
-=====
+Interesting Links
+=================
 
 https://www.pluralsight.com/tech-blog/managing-python-environments/ looks like
 a really good resource.
