@@ -1324,9 +1324,15 @@ to manage virtual environments. Three (that I have not used!) are:
   front end (command line tool) for various different programming
   languages. For Python it wraps poetry_.
 
+* DepHell_ is a project management tool for Python that is meant to be an
+  all-in-one solution that can (for instance) work with pip, pipenv and
+  poetry. If you're needing to convert beween tools, or work with multiple
+  tools, it may be a good solution.
+
 .. _venv_manager: https://github.com/purajit/venv_manager
 .. _direnv: https://direnv.net/
 .. _upm: https://github.com/replit/upm
+.. _DepHell: https://dephell.readthedocs.io/
 
 ----
 
