@@ -52,6 +52,7 @@ My reasons:
 * You need packages with conflicting dependencies
 * Being explicit about dependencies of a project
 * Being tidy
+* License compliance
 
 and maybe a bit of help when upgrading Python (and "losing" installed
 packages)
@@ -1172,6 +1173,7 @@ Awkward questions
 * How do I stop ``pip`` from installing outside a virtual environment?
 * Do I *need* to activate the virtual environment?
 * What happens when I upgrade Python?
+* What about an existing requirements.txt?
 
 ----
 
@@ -1294,6 +1296,31 @@ Well, generally, yes, but...
 
     poetry env remove python3.7
     poetry shell
+
+----
+
+What about an existing requirements.txt?
+----------------------------------------
+
+If you get the source code for a package, it may come with a requirements.txt
+file (probably output using ``pip freeze``) that you want to use to setup
+your virtual environment.
+
+If you're just using a normal virtual environment, you can just install the
+packages from that file using ``pip install -r requirements.txt``
+
+If you're using pipenv, then when you do ``pipenv install`` it will notice
+that there is a ``requirements.txt`` file (but no ``Pipfile``) and read one to
+create the other. Or you can be explicit: ``pipenv install -r requirements.txt``.
+
+If you're using poetry, then you currently need to add the contents of the
+``requirements.txt`` file to the ``pyproject.toml`` file by hand (in the
+``[tool.poetry.dependencies]`` or ``[tool.poetry.dev-dependencies]`` sections,
+as appropriate).
+
+Poetry `issue 46`_ talks about this, and some workarounds. 
+
+.. _`issue 46`: https://github.com/python-poetry/poetry/issues/46
 
 ----
 

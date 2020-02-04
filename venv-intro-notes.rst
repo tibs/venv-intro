@@ -101,6 +101,12 @@ don't overlap much. There's no particular reason to have the unnecessary
 packages available, and if we constrain our workspace a bit, it makes it
 easier to reason about problems when they do occur.
 
+License management
+------------------
+
+Having all the packages that are being used in one place makes it easier to
+inspect them for license compliance.
+
 What about upgrading Python?
 ----------------------------
 
@@ -115,7 +121,7 @@ package, but has quite a few dependencies. If I want to play with it, then I
 probably don't want to "splash" those dependencies all over my normal working
 environment, especially if I'm also doing actual work with Python.
 
-At work, we had two Pyton programs we needed to use in our build chain, but
+At work, we had two Python programs we needed to use in our build chain, but
 they had incompatible version requirements of support libraries. The solution
 was to use a different virtual environment for each.
 
@@ -1638,6 +1644,29 @@ Also...
 
 (Also, if this is a problem you keep having, consider using pyenv_, which is
 briefly discussed under `Multiple Pythons`_ below.
+
+What about an existing requirements.txt?
+----------------------------------------
+
+If you get the source code for a package, it may come with a requirements.txt
+file (probably output using ``pip freeze``) that you want to use to setup
+your virtual environment.
+
+If you're just using a normal virtual environment, you can just install the
+packages from that file using ``pip install -r requirements.txt``
+
+If you're using pipenv, then when you do ``pipenv install`` it will notice
+that there is a ``requirements.txt`` file (but no ``Pipfile``) and read one to
+create the other. Or you can be explicit: ``pipenv install -r requirements.txt``.
+
+If you're using poetry, then you currently need to add the contents of the
+``requirements.txt`` file to the ``pyproject.toml`` file by hand (in the
+``[tool.poetry.dependencies]`` or ``[tool.poetry.dev-dependencies]`` sections,
+as appropriate).
+
+Poetry `issue 46`_ talks about this, and some workarounds. 
+
+.. _`issue 46`: https://github.com/python-poetry/poetry/issues/46
 
 The venv directory and version control systems
 ==============================================
