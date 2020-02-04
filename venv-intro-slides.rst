@@ -205,6 +205,8 @@ We need to activate it:
   tibs ~/temp$ source venv/bin/activate.fish
   (venv) tibs ~/temp$
 
+.. image:: images/ScreenshotWindows4.png
+
 Note how the prompt has changed.
 
 ----
@@ -351,6 +353,15 @@ Let's look at the virtual environment directory
   home = /usr/local/bin
   include-system-site-packages = false
   version = 3.7.6
+
+----
+
+On Windows
+----------
+
+.. image:: images/ScreenshotWindows1.png
+
+``Scripts`` instead of ``bin``
 
 ----
 
