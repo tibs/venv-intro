@@ -323,6 +323,19 @@ and if you're using Powershell you do::
   Yes, windows works differently, so there's no equivalent to
   ``source``. Which is nice.
 
+.. note:: The Windows virtual environment directory provides activation
+   scripts for CMD.EXE and Powershell, as I've said, but it also always
+   includes the Bash activation script, as ``venv\Scripts\activate``, to
+   allow for Windows users who are using Bash.
+
+.. note:: When using git bash (the bash installed with git on Windows) there
+   seem to be occasional problems. For instance, I did not have permission to
+   run the Python I had installed from the Windows App Store, but the Python
+   installed from python.org worked OK. Also, some problems were observed at
+   the CamPUG workshop in February 2020. However, if all goes well, you
+   should be able to use ``venv/Scripts/activate`` to activate a git bash
+   environment in the normal manner.
+
 In all cases, the next prompt should now start with ``(venv)`` - that is, the
 name of the virtual environment directory, in parentheses.
 
