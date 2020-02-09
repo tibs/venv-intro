@@ -406,38 +406,39 @@ ul.auto-toc {
 <li><a class="reference internal" href="#pipenv" id="id40">pipenv</a></li>
 <li><a class="reference internal" href="#poetry" id="id41">poetry</a></li>
 <li><a class="reference internal" href="#conda" id="id42">conda</a></li>
+<li><a class="reference internal" href="#enthought-deployment-manager" id="id43">Enthought Deployment Manager</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#ides" id="id43">IDEs</a><ul>
-<li><a class="reference internal" href="#vs-code" id="id44">VS Code</a></li>
-<li><a class="reference internal" href="#pycharm" id="id45">PyCharm</a></li>
-<li><a class="reference internal" href="#atom" id="id46">Atom</a></li>
-<li><a class="reference internal" href="#jupyter-notebook" id="id47">Jupyter notebook</a></li>
+<li><a class="reference internal" href="#ides" id="id44">IDEs</a><ul>
+<li><a class="reference internal" href="#vs-code" id="id45">VS Code</a></li>
+<li><a class="reference internal" href="#pycharm" id="id46">PyCharm</a></li>
+<li><a class="reference internal" href="#atom" id="id47">Atom</a></li>
+<li><a class="reference internal" href="#jupyter-notebook" id="id48">Jupyter notebook</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#awkward-questions" id="id48">Awkward questions</a><ul>
-<li><a class="reference internal" href="#what-happens-if-i-activate-a-virtual-environment-while-i-ve-got-one-activated" id="id49">What happens if I activate a virtual environment while I've got one activated?</a></li>
-<li><a class="reference internal" href="#can-i-deliberately-create-a-virtual-environment-that-depends-on-another" id="id50">Can I (deliberately) create a virtual environment that depends on another?</a></li>
-<li><a class="reference internal" href="#how-do-i-stop-pip-from-installing-outside-a-virtual-environment" id="id51">How do I stop <tt class="docutils literal">pip</tt> from installing outside a virtual environment?</a></li>
-<li><a class="reference internal" href="#do-i-need-to-activate-the-virtual-environment" id="id52">Do I <em>need</em> to activate the virtual environment?</a></li>
-<li><a class="reference internal" href="#what-happens-when-i-upgrade-python" id="id53">What happens when I upgrade Python?</a><ul>
-<li><a class="reference internal" href="#using-pipenv" id="id54">Using pipenv</a></li>
-<li><a class="reference internal" href="#using-poetry" id="id55">Using poetry</a></li>
-<li><a class="reference internal" href="#also" id="id56">Also...</a></li>
+<li><a class="reference internal" href="#awkward-questions" id="id49">Awkward questions</a><ul>
+<li><a class="reference internal" href="#what-happens-if-i-activate-a-virtual-environment-while-i-ve-got-one-activated" id="id50">What happens if I activate a virtual environment while I've got one activated?</a></li>
+<li><a class="reference internal" href="#can-i-deliberately-create-a-virtual-environment-that-depends-on-another" id="id51">Can I (deliberately) create a virtual environment that depends on another?</a></li>
+<li><a class="reference internal" href="#how-do-i-stop-pip-from-installing-outside-a-virtual-environment" id="id52">How do I stop <tt class="docutils literal">pip</tt> from installing outside a virtual environment?</a></li>
+<li><a class="reference internal" href="#do-i-need-to-activate-the-virtual-environment" id="id53">Do I <em>need</em> to activate the virtual environment?</a></li>
+<li><a class="reference internal" href="#what-happens-when-i-upgrade-python" id="id54">What happens when I upgrade Python?</a><ul>
+<li><a class="reference internal" href="#using-pipenv" id="id55">Using pipenv</a></li>
+<li><a class="reference internal" href="#using-poetry" id="id56">Using poetry</a></li>
+<li><a class="reference internal" href="#also" id="id57">Also...</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#what-about-an-existing-requirements-txt" id="id57">What about an existing requirements.txt?</a></li>
+<li><a class="reference internal" href="#what-about-an-existing-requirements-txt" id="id58">What about an existing requirements.txt?</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#the-venv-directory-and-version-control-systems" id="id58">The venv directory and version control systems</a></li>
-<li><a class="reference internal" href="#the-system-site-packages-switch" id="id59">The <tt class="docutils literal"><span class="pre">--system-site-packages</span></tt> switch</a></li>
-<li><a class="reference internal" href="#multiple-pythons" id="id60">Multiple Pythons</a></li>
-<li><a class="reference internal" href="#other-tools" id="id61">Other tools</a></li>
-<li><a class="reference internal" href="#an-example-of-using-venv-on-windows-10" id="id62">An example of using <tt class="docutils literal">venv</tt> on Windows 10</a><ul>
-<li><a class="reference internal" href="#installing-poetry" id="id63">Installing poetry</a></li>
+<li><a class="reference internal" href="#the-venv-directory-and-version-control-systems" id="id59">The venv directory and version control systems</a></li>
+<li><a class="reference internal" href="#the-system-site-packages-switch" id="id60">The <tt class="docutils literal"><span class="pre">--system-site-packages</span></tt> switch</a></li>
+<li><a class="reference internal" href="#multiple-pythons" id="id61">Multiple Pythons</a></li>
+<li><a class="reference internal" href="#other-tools" id="id62">Other tools</a></li>
+<li><a class="reference internal" href="#an-example-of-using-venv-on-windows-10" id="id63">An example of using <tt class="docutils literal">venv</tt> on Windows 10</a><ul>
+<li><a class="reference internal" href="#installing-poetry" id="id64">Installing poetry</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#interesting-links" id="id64">Interesting Links</a></li>
+<li><a class="reference internal" href="#interesting-links" id="id65">Interesting Links</a></li>
 </ul>
 </div>
 <div class="section" id="why-do-we-need-virtual-environments">
@@ -589,6 +590,9 @@ tibs ~/temp$ which python
 tibs ~/temp$ which python3
 /usr/local/bin/python3
 </pre>
+<p>(On Windows, use <tt class="docutils literal">where python</tt> and <tt class="docutils literal">where python3</tt> respectively, which
+will show you all the possible programs for each command - it's actually more
+informative than <tt class="docutils literal">which</tt> on unix.)</p>
 <p>As it happens, I installed the Python 3 myself, deliberately, and the Python 2
 has been installed as a depencency of something else (otherwise I wouldn't
 have bothered).</p>
@@ -606,7 +610,7 @@ Instead, it is recommended that you transition to using <span class="literal str
 Python <span class="literal number">2</span>.7.16 <span class="operator">(</span>default, Nov  <span class="literal number">9</span> <span class="literal number">2019</span>, <span class="literal number">05</span>:55:08<span class="operator">)</span>
 <span class="operator">[</span>GCC <span class="literal number">4</span>.2.1 Compatible Apple LLVM <span class="literal number">11</span>.0.0 <span class="operator">(</span>clang-1100.0.32.4<span class="operator">)</span> <span class="operator">(</span>-macos10.15-objc-s on darwin
 Type <span class="literal string double">&quot;help&quot;</span>, <span class="literal string double">&quot;copyright&quot;</span>, <span class="literal string double">&quot;credits&quot;</span> or <span class="literal string double">&quot;license&quot;</span> <span class="keyword">for</span> more information.
-&gt;&gt;&gt; ^D
+&gt;&gt;&gt; exit<span class="operator">()</span>
 </pre>
 </blockquote>
 </div>
@@ -693,6 +697,23 @@ PS &gt; venv\Scripts\Activate.ps1
 <blockquote>
 Yes, windows works differently, so there's no equivalent to
 <tt class="docutils literal">source</tt>. Which is nice.</blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Windows virtual environment directory provides activation
+scripts for CMD.EXE and Powershell, as I've said, but it also always
+includes the Bash activation script, as <tt class="docutils literal">venv\Scripts\activate</tt>, to
+allow for Windows users who are using Bash.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When using git bash (the bash installed with git on Windows) there
+seem to be occasional problems. For instance, I did not have permission to
+run the Python I had installed from the Windows App Store, but the Python
+installed from python.org worked OK. Also, some problems were observed at
+the CamPUG workshop in February 2020. However, if all goes well, you
+should be able to use <tt class="docutils literal">venv/Scripts/activate</tt> to activate a git bash
+environment in the normal manner.</p>
+</div>
 <p>In all cases, the next prompt should now start with <tt class="docutils literal">(venv)</tt> - that is, the
 name of the virtual environment directory, in parentheses.</p>
 <p>For instance, in my case:</p>
@@ -731,6 +752,7 @@ that both of those commands point &quot;inside&quot; the virtual environment dir
 /Users/tibs/temp/venv/bin/python
 </pre>
 <p>not to the &quot;original&quot; locations.</p>
+<p>(and remember, on Windows, use <tt class="docutils literal">where</tt> instead of <tt class="docutils literal">which</tt>.)</p>
 <p>...and actually, the same has been done for <tt class="docutils literal">pip</tt> and <tt class="docutils literal">pip3</tt> as well,
 which makes of new packages installation just that bit easier.</p>
 </div>
@@ -803,7 +825,7 @@ Python <span class="literal number">3</span>.7.6 <span class="operator">(</span>
 <span class="operator">[</span>Clang <span class="literal number">11</span>.0.0 <span class="operator">(</span>clang-1100.0.33.16<span class="operator">)]</span> on darwin
 Type <span class="literal string double">&quot;help&quot;</span>, <span class="literal string double">&quot;copyright&quot;</span>, <span class="literal string double">&quot;credits&quot;</span> or <span class="literal string double">&quot;license&quot;</span> <span class="keyword">for</span> more information.
 &gt;&gt;&gt; import requests
-&gt;&gt;&gt;
+&gt;&gt;&gt; exit<span class="operator">()</span>
 </pre>
 <pre class="code bash literal-block">
 <span class="operator">(</span>venv<span class="operator">)</span> tibs ~/temp$ deactivate
@@ -826,7 +848,7 @@ Type <span class="literal string double">&quot;help&quot;</span>, <span class="l
 Traceback <span class="operator">(</span>most recent call last<span class="operator">)</span>:
   File <span class="literal string double">&quot;&lt;stdin&gt;&quot;</span>, line <span class="literal number">1</span>, in &lt;module&gt;
 ModuleNotFoundError: No module named <span class="literal string single">'requests'</span>
-&gt;&gt;&gt;
+&gt;&gt;&gt; exit<span class="operator">()</span>
 </pre>
 <p>In other words, the changes we made in the virtual environment have &quot;gone
 away&quot;.</p>
@@ -960,8 +982,9 @@ own <tt class="docutils literal">venv</tt>.</p>
 <p>When you <tt class="docutils literal">cd</tt> into a directory, you activate its virtual environment.</p>
 <p>This works well if you use one terminal window per project, and also works
 well with IDEs, which generally like to identify a project directory tree.</p>
-<p>There are also tools like <tt class="docutils literal">direnv</tt> (??) which will facilitate this by
-actually starting up the virtualenv when you <tt class="docutils literal">cd</tt> into the directory tree.</p>
+<p>There are also tools like <tt class="docutils literal">direnv</tt> (see <a class="reference internal" href="#other-tools">other tools</a>) which will
+facilitate this by actually starting up the virtualenv when you <tt class="docutils literal">cd</tt> into
+the directory tree.</p>
 <p>One of the reasons this works well is it makes it fairly easy to remember
 which virtual environment you <em>should</em> be using.</p>
 <p>I've used this at work, where my Python code tended to be organised in this
@@ -1566,11 +1589,17 @@ a lot more than that, but still aimed at the scientific / big data worlds.</p>
 is closer to just using <tt class="docutils literal">pip</tt>.</li>
 </ul>
 </div>
+<div class="section" id="enthought-deployment-manager">
+<h2><a class="toc-backref" href="#id43">Enthought Deployment Manager</a></h2>
+<p>If you're using the <a class="reference external" href="https://docs.enthought.com/ets/">Enthought Tool Suite</a>, then you will have <a class="reference external" href="https://www.enthought.com/enthought-deployment-manager/">edm</a> (the
+Enthought Deployment Manager) available, which also provides similar
+capabilities.</p>
+</div>
 </div>
 <div class="section" id="ides">
-<h1><a class="toc-backref" href="#id43">IDEs</a></h1>
+<h1><a class="toc-backref" href="#id44">IDEs</a></h1>
 <div class="section" id="vs-code">
-<h2><a class="toc-backref" href="#id44">VS Code</a></h2>
+<h2><a class="toc-backref" href="#id45">VS Code</a></h2>
 <p><a class="reference external" href="https://code.visualstudio.com/">VS Code</a> (Visual Studio Code) supports Python virtual environments.</p>
 <p>If you are editing a Python file, the Python interpreter being used is shown
 at the bottom left of the screen.</p>
@@ -1587,7 +1616,7 @@ use to store virtual environments, and its simple to use with <a class="referenc
 (see the second article in <a class="reference external" href="https://www.pythoncheatsheet.org/blog/python-projects-with-poetry-and-vscode-part-1/">Python projects with Poetry and VSCode</a>).</p>
 </div>
 <div class="section" id="pycharm">
-<h2><a class="toc-backref" href="#id45">PyCharm</a></h2>
+<h2><a class="toc-backref" href="#id46">PyCharm</a></h2>
 <p><a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a>: always thinks in terms of &quot;projects&quot;.</p>
 <p><a class="reference external" href="https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html">Configure a virtual environment</a> explains how to use and create virtual
 environments in PyCharm, and <a class="reference external" href="https://www.jetbrains.com/help/pycharm/conda-support-creating-conda-virtual-environment.html">Conda virtual environment</a> explains how to use
@@ -1599,13 +1628,13 @@ to specify the full path to the Python executable. So, for instance:</p>
 </pre>
 </div>
 <div class="section" id="atom">
-<h2><a class="toc-backref" href="#id46">Atom</a></h2>
+<h2><a class="toc-backref" href="#id47">Atom</a></h2>
 <p>There appear to be multiple packages that support virtual environments
 for Python in <a class="reference external" href="https://atom.io/">atom</a>. I'm assuimg that if you use atom you know your way around
 the package system.</p>
 </div>
 <div class="section" id="jupyter-notebook">
-<h2><a class="toc-backref" href="#id47">Jupyter notebook</a></h2>
+<h2><a class="toc-backref" href="#id48">Jupyter notebook</a></h2>
 <p><a class="reference external" href="https://jupyter.org/">Jupyter</a> notebook isn't really an IDE, but virtual environments are still
 relevant when using it.</p>
 <p>The simplest thing to do is to create your virtual environment, then install
@@ -1622,9 +1651,9 @@ that's a bit beyond this document.</p>
 </div>
 </div>
 <div class="section" id="awkward-questions">
-<h1><a class="toc-backref" href="#id48">Awkward questions</a></h1>
+<h1><a class="toc-backref" href="#id49">Awkward questions</a></h1>
 <div class="section" id="what-happens-if-i-activate-a-virtual-environment-while-i-ve-got-one-activated">
-<h2><a class="toc-backref" href="#id49">What happens if I activate a virtual environment while I've got one activated?</a></h2>
+<h2><a class="toc-backref" href="#id50">What happens if I activate a virtual environment while I've got one activated?</a></h2>
 <p>The new activation will &quot;take over&quot;.</p>
 <p>In particular, the old virtual environment binary directory is removed from
 the PATH and the new one is added instead.</p>
@@ -1632,7 +1661,7 @@ the PATH and the new one is added instead.</p>
 perhaps best not to rely on it.</p>
 </div>
 <div class="section" id="can-i-deliberately-create-a-virtual-environment-that-depends-on-another">
-<h2><a class="toc-backref" href="#id50">Can I (deliberately) create a virtual environment that depends on another?</a></h2>
+<h2><a class="toc-backref" href="#id51">Can I (deliberately) create a virtual environment that depends on another?</a></h2>
 <p>Yes. Simply do <tt class="docutils literal">python <span class="pre">-m</span> venv &lt;name&gt;</tt> inside an already activated virtual
 environment.</p>
 <p>If you inspect the <tt class="docutils literal">bin/python</tt> entry (on unix, at least) you will see it
@@ -1641,7 +1670,7 @@ links to the Python from the earlier virtual environment.</p>
 another discussion.</p>
 </div>
 <div class="section" id="how-do-i-stop-pip-from-installing-outside-a-virtual-environment">
-<h2><a class="toc-backref" href="#id51">How do I stop <tt class="docutils literal">pip</tt> from installing outside a virtual environment?</a></h2>
+<h2><a class="toc-backref" href="#id52">How do I stop <tt class="docutils literal">pip</tt> from installing outside a virtual environment?</a></h2>
 <p>It's not very well documented, but the simplest way to do this is to set the
 environment variable:</p>
 <pre class="literal-block">
@@ -1659,7 +1688,7 @@ ERROR: Could not find an activated virtualenv (required).
 </pre>
 </div>
 <div class="section" id="do-i-need-to-activate-the-virtual-environment">
-<h2><a class="toc-backref" href="#id52">Do I <em>need</em> to activate the virtual environment?</a></h2>
+<h2><a class="toc-backref" href="#id53">Do I <em>need</em> to activate the virtual environment?</a></h2>
 <p>Well, actually, no. It just makes things more convenient. If you run the
 Python in the virtual environment <tt class="docutils literal">bin</tt> directory (<tt class="docutils literal">Scripts</tt> for Wndows)
 explicitly, then that Python will &quot;look around itself&quot; and use the virtual
@@ -1672,7 +1701,7 @@ Python <span class="literal number">3</span>.7.6 <span class="operator">(</span>
 <span class="operator">[</span>Clang <span class="literal number">11</span>.0.0 <span class="operator">(</span>clang-1100.0.33.16<span class="operator">)]</span> on darwin
 Type <span class="literal string double">&quot;help&quot;</span>, <span class="literal string double">&quot;copyright&quot;</span>, <span class="literal string double">&quot;credits&quot;</span> or <span class="literal string double">&quot;license&quot;</span> <span class="keyword">for</span> more information.
 &gt;&gt;&gt; import requests
-&gt;&gt;&gt;
+&gt;&gt;&gt; exit<span class="operator">()</span>
 </pre>
 <p>That <em>also</em> means that if you install a Python program to the virtual
 environment <tt class="docutils literal">bin</tt> directory, and run it directly (using its full path) then
@@ -1696,7 +1725,7 @@ tibs ~/temp$ pydep/bin/pipdeptree --version
 </pre>
 </div>
 <div class="section" id="what-happens-when-i-upgrade-python">
-<h2><a class="toc-backref" href="#id53">What happens when I upgrade Python?</a></h2>
+<h2><a class="toc-backref" href="#id54">What happens when I upgrade Python?</a></h2>
 <p>That is, if the older Python &quot;disappears&quot; (as will generally happen with a
 <tt class="docutils literal">homebrew</tt> upgrade on a Mac, for instance), do my virtual environments just
 stop working?</p>
@@ -1710,7 +1739,7 @@ tibs ~/temp$ brew install python&#64;3.8    <span class="comment single"># insta
 <p>and now Python3.8 is what I get (in that shell) when I type <tt class="docutils literal">python3</tt></p>
 <p>If it's a pipenv or poetry virtual environment, then:</p>
 <div class="section" id="using-pipenv">
-<h3><a class="toc-backref" href="#id54">Using pipenv</a></h3>
+<h3><a class="toc-backref" href="#id55">Using pipenv</a></h3>
 <p>Remember that our <tt class="docutils literal">Pipfile</tt> file looks something like:</p>
 <pre class="literal-block">
 [[source]]
@@ -1755,7 +1784,7 @@ tibs ~/temp$  <span class="name builtin">source</span> /Users/tibs/.local/share/
 <p>and now <tt class="docutils literal">python</tt> is 3.8.</p>
 </div>
 <div class="section" id="using-poetry">
-<h3><a class="toc-backref" href="#id55">Using poetry</a></h3>
+<h3><a class="toc-backref" href="#id56">Using poetry</a></h3>
 <p>Remember that our <tt class="docutils literal">pyproject.toml</tt> file looks like:</p>
 <pre class="literal-block">
 [tool.poetry]
@@ -1794,13 +1823,13 @@ tibs ~/temp$ <span class="name builtin">source</span> /Users/tibs/Library/Caches
 <p>and now <tt class="docutils literal">python</tt> is 3.8.</p>
 </div>
 <div class="section" id="also">
-<h3><a class="toc-backref" href="#id56">Also...</a></h3>
+<h3><a class="toc-backref" href="#id57">Also...</a></h3>
 <p>(Also, if this is a problem you keep having, consider using <a class="reference external" href="https://github.com/pyenv/pyenv">pyenv</a>, which is
 briefly discussed under <a class="reference internal" href="#multiple-pythons">Multiple Pythons</a> below.</p>
 </div>
 </div>
 <div class="section" id="what-about-an-existing-requirements-txt">
-<h2><a class="toc-backref" href="#id57">What about an existing requirements.txt?</a></h2>
+<h2><a class="toc-backref" href="#id58">What about an existing requirements.txt?</a></h2>
 <p>If you get the source code for a package, it may come with a requirements.txt
 file (probably output using <tt class="docutils literal">pip freeze</tt>) that you want to use to setup
 your virtual environment.</p>
@@ -1817,7 +1846,7 @@ as appropriate).</p>
 </div>
 </div>
 <div class="section" id="the-venv-directory-and-version-control-systems">
-<h1><a class="toc-backref" href="#id58">The venv directory and version control systems</a></h1>
+<h1><a class="toc-backref" href="#id59">The venv directory and version control systems</a></h1>
 <p>Broadly, don't commit the <tt class="docutils literal">venv</tt> directory to your version control
 system. It doesn't contain anything portable (by definition).</p>
 <p>If you're using git, then you may want to add a rule to your <tt class="docutils literal">.gitignore</tt>
@@ -1835,7 +1864,7 @@ instead.</p>
 </blockquote>
 </div>
 <div class="section" id="the-system-site-packages-switch">
-<h1><a class="toc-backref" href="#id59">The <tt class="docutils literal"><span class="pre">--system-site-packages</span></tt> switch</a></h1>
+<h1><a class="toc-backref" href="#id60">The <tt class="docutils literal"><span class="pre">--system-site-packages</span></tt> switch</a></h1>
 <p>Normally, when I create a new virtual environment, it starts without anything
 installed (except <tt class="docutils literal">pip</tt> and other basic infrastructure). So if the Python I
 used to create the virtual environment (the <tt class="docutils literal">python3</tt> in <tt class="docutils literal">python3 <span class="pre">-m</span>
@@ -1854,7 +1883,7 @@ Type <span class="literal string double">&quot;help&quot;</span>, <span class="l
 Traceback <span class="operator">(</span>most recent call last<span class="operator">)</span>:
   File <span class="literal string double">&quot;&lt;stdin&gt;&quot;</span>, line <span class="literal number">1</span>, in &lt;module&gt;
 ModuleNotFoundError: No module named <span class="literal string single">'docutils'</span>
-&gt;&gt;&gt;
+&gt;&gt;&gt; exit<span class="operator">()</span>
 <span class="operator">(</span>secondary<span class="operator">)</span> tibs ~/temp$ deactivate
 </pre>
 <pre class="code bash literal-block">
@@ -1869,11 +1898,11 @@ Python <span class="literal number">3</span>.7.6 <span class="operator">(</span>
 <span class="operator">[</span>Clang <span class="literal number">11</span>.0.0 <span class="operator">(</span>clang-1100.0.33.16<span class="operator">)]</span> on darwin
 Type <span class="literal string double">&quot;help&quot;</span>, <span class="literal string double">&quot;copyright&quot;</span>, <span class="literal string double">&quot;credits&quot;</span> or <span class="literal string double">&quot;license&quot;</span> <span class="keyword">for</span> more information.
 &gt;&gt;&gt; import docutils
-&gt;&gt;&gt;
+&gt;&gt;&gt; exit<span class="operator">()</span>
 </pre>
 </div>
 <div class="section" id="multiple-pythons">
-<h1><a class="toc-backref" href="#id60">Multiple Pythons</a></h1>
+<h1><a class="toc-backref" href="#id61">Multiple Pythons</a></h1>
 <p>Sometimes you need more than one version of Python - for instance, to test
 that a new version of Python is still compatible with existing code.</p>
 <p>System package managers cannot always help with this - they typically only
@@ -1887,7 +1916,7 @@ different versions.</p>
 complementary.</p>
 </div>
 <div class="section" id="other-tools">
-<h1><a class="toc-backref" href="#id61">Other tools</a></h1>
+<h1><a class="toc-backref" href="#id62">Other tools</a></h1>
 <p>These are lots of other tools out there for making it easier (in some sense)
 to manage virtual environments. Four (that I have not used!) are:</p>
 <ul class="simple">
@@ -1907,7 +1936,7 @@ tools, it may be a good solution.</li>
 </ul>
 </div>
 <div class="section" id="an-example-of-using-venv-on-windows-10">
-<h1><a class="toc-backref" href="#id62">An example of using <tt class="docutils literal">venv</tt> on Windows 10</a></h1>
+<h1><a class="toc-backref" href="#id63">An example of using <tt class="docutils literal">venv</tt> on Windows 10</a></h1>
 <!-- Super secure information(!)
 
 * password: sausages
@@ -1929,6 +1958,9 @@ C:\Users\Tibs&gt;cd temp
 </pre>
 <p>Python is Python 3;</p>
 <img alt="images/ScreenshotWindows0a.png" src="images/ScreenshotWindows0a.png" style="width: 1209.0px; height: 81.0px;" />
+<p>(on Windows, exit the Python prompt by pressing the <tt class="docutils literal"><span class="pre">CTRL-Z</span></tt> key and then
+pressing the Return key, or by typing <tt class="docutils literal">exit()</tt> and then pressing the Return
+key).</p>
 <pre class="literal-block">
 C:\Users\Tibs\temp&gt;python3 -m venv venv
 </pre>
@@ -1960,7 +1992,7 @@ upgrade pip.</p>
 <p>to:</p>
 <img alt="images/ScreenshotWindows8.png" src="images/ScreenshotWindows8.png" style="width: 822.0px; height: 604.0px;" />
 <div class="section" id="installing-poetry">
-<h2><a class="toc-backref" href="#id63">Installing poetry</a></h2>
+<h2><a class="toc-backref" href="#id64">Installing poetry</a></h2>
 <p>The <a class="reference external" href="https://python-poetry.org/">poetry</a> documentation tells you how to install poetry on Windows if you're
 using the Windows bash shell, or if you're using Powershell, but doesn't
 actually say what to do if you're using CMD.EXE.</p>
@@ -1974,7 +2006,7 @@ directory to your path - for instance, in my case
 </div>
 </div>
 <div class="section" id="interesting-links">
-<h1><a class="toc-backref" href="#id64">Interesting Links</a></h1>
+<h1><a class="toc-backref" href="#id65">Interesting Links</a></h1>
 <p><a class="reference external" href="https://www.pluralsight.com/tech-blog/managing-python-environments/">https://www.pluralsight.com/tech-blog/managing-python-environments/</a> looks like
 a really good resource.</p>
 <p><a class="reference external" href="https://interrupt.memfault.com/blog/conda-developer-environments">https://interrupt.memfault.com/blog/conda-developer-environments</a> - using conda</p>
