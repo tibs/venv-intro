@@ -194,6 +194,10 @@ I can investigate that a bit further:
   tibs ~/temp$ which python3
   /usr/local/bin/python3
 
+(On Windows, use ``where python`` and ``where python3`` respectively, which
+will show you all the possible programs for each command - it's actually more
+informative than ``which`` on unix.)
+
 As it happens, I installed the Python 3 myself, deliberately, and the Python 2
 has been installed as a depencency of something else (otherwise I wouldn't
 have bothered).
@@ -364,6 +368,8 @@ that both of those commands point "inside" the virtual environment directory:
   /Users/tibs/temp/venv/bin/python
 
 not to the "original" locations.
+
+(and remember, on Windows, use ``where`` instead of ``which``.)
    
 ...and actually, the same has been done for ``pip`` and ``pip3`` as well,
 which makes of new packages installation just that bit easier.
@@ -642,8 +648,9 @@ When you ``cd`` into a directory, you activate its virtual environment.
 This works well if you use one terminal window per project, and also works
 well with IDEs, which generally like to identify a project directory tree.
 
-There are also tools like ``direnv`` (??) which will facilitate this by
-actually starting up the virtualenv when you ``cd`` into the directory tree.
+There are also tools like ``direnv`` (see `other tools`_) which will
+facilitate this by actually starting up the virtualenv when you ``cd`` into
+the directory tree.
 
 One of the reasons this works well is it makes it fairly easy to remember
 which virtual environment you *should* be using.
@@ -1355,6 +1362,16 @@ I don't know much about conda_, because I've never used it.
 * support for many different languages
 * there is miniconda_ which is ``conda`` without *all* of the packages - this
   is closer to just using ``pip``.
+
+Enthought Deployment Manager
+----------------------------
+
+.. _`Enthought Tool Suite`: https://docs.enthought.com/ets/
+.. _edm: https://www.enthought.com/enthought-deployment-manager/
+
+If you're using the `Enthought Tool Suite`_, then you will have edm_ (the
+Enthought Deployment Manager) available, which also provides similar
+capabilities.
 
 IDEs
 ====

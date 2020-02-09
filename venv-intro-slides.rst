@@ -116,6 +116,8 @@ and being specific:
   tibs ~/temp$ which python3
   /usr/local/bin/python3
 
+(on Windows, use ``where`` instead of ``which``)
+
 ----
 
 Create a virtual environment
@@ -229,6 +231,8 @@ What has changed? (apart from the prompt)
 
   (venv) tibs ~/temp$ which python
   /Users/tibs/temp/venv/bin/python
+
+(remember, on Windows use ``where`` instead of ``which``)
 
 ----
 
