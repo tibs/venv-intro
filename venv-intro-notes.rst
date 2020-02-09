@@ -213,7 +213,7 @@ have bothered).
     Python 2.7.16 (default, Nov  9 2019, 05:55:08)
     [GCC 4.2.1 Compatible Apple LLVM 11.0.0 (clang-1100.0.32.4) (-macos10.15-objc-s on darwin
     Type "help", "copyright", "credits" or "license" for more information.
-    >>> ^D
+    >>> exit()
 
 Create a virtual environment
 ----------------------------
@@ -452,7 +452,7 @@ and to prove we've got the ``requests`` package installed:
   [Clang 11.0.0 (clang-1100.0.33.16)] on darwin
   Type "help", "copyright", "credits" or "license" for more information.
   >>> import requests
-  >>>
+  >>> exit()
 
 .. code:: bash
 
@@ -479,7 +479,7 @@ And now we're back to the versions of Python outside the virtual environment:
   Traceback (most recent call last):
     File "<stdin>", line 1, in <module>
   ModuleNotFoundError: No module named 'requests'
-  >>>
+  >>> exit()
 
 In other words, the changes we made in the virtual environment have "gone
 away".
@@ -1500,7 +1500,7 @@ So:
   [Clang 11.0.0 (clang-1100.0.33.16)] on darwin
   Type "help", "copyright", "credits" or "license" for more information.
   >>> import requests
-  >>>
+  >>> exit()
 
 That *also* means that if you install a Python program to the virtual
 environment ``bin`` directory, and run it directly (using its full path) then
@@ -1713,7 +1713,7 @@ the packages in the original Python.
   Traceback (most recent call last):
     File "<stdin>", line 1, in <module>
   ModuleNotFoundError: No module named 'docutils'
-  >>>
+  >>> exit()
   (secondary) tibs ~/temp$ deactivate
 
 .. code:: bash
@@ -1729,7 +1729,7 @@ the packages in the original Python.
   [Clang 11.0.0 (clang-1100.0.33.16)] on darwin
   Type "help", "copyright", "credits" or "license" for more information.
   >>> import docutils
-  >>>
+  >>> exit()
 
 
 Multiple Pythons
@@ -1815,6 +1815,10 @@ Python is Python 3;
    :width: 2418 px
    :height: 162 px
    :scale: 50%
+
+(on Windows, exit the Python prompt by pressing the ``CTRL-Z`` key and then
+pressing the Return key, or by typing ``exit()`` and then pressing the Return
+key).
 
 ::
 

@@ -293,7 +293,7 @@ And now
   [Clang 11.0.0 (clang-1100.0.33.16)] on darwin
   Type "help", "copyright", "credits" or "license" for more information.
   >>> import requests
-  >>>
+  >>> exit()
 
 .. code:: bash
 
@@ -335,7 +335,7 @@ After deactivation
   Traceback (most recent call last):
     File "<stdin>", line 1, in <module>
   ModuleNotFoundError: No module named 'requests'
-  >>>
+  >>> exit()
 
 ----
 
@@ -1260,7 +1260,7 @@ So:
   [Clang 11.0.0 (clang-1100.0.33.16)] on darwin
   Type "help", "copyright", "credits" or "license" for more information.
   >>> import requests
-  >>>
+  >>> exit()
 
 ----
 
@@ -1376,7 +1376,7 @@ the packages in the original Python.
   Traceback (most recent call last):
     File "<stdin>", line 1, in <module>
   ModuleNotFoundError: No module named 'docutils'
-  >>>
+  >>> exit()
   (secondary) tibs ~/temp$ deactivate
 
 ----
@@ -1395,7 +1395,7 @@ the packages in the original Python.
   [Clang 11.0.0 (clang-1100.0.33.16)] on darwin
   Type "help", "copyright", "credits" or "license" for more information.
   >>> import docutils
-  >>>
+  >>> exit()
 
 ----
 
