@@ -28,7 +28,10 @@ notes are converted to HTML using `rst2html.py`_.
 .. _`rst2html.py`: https://docutils.sourceforge.io/docs/user/tools.html
 
 Note that the github rendering of the reStructuredText is not great in some
-places, and so I have also commited the HTML rendering of the notes.
+places, and so I have also commited the HTML rendering of the notes (which can
+be see as an actual HTML page here_)
+
+.. _here: https://htmlpreview.github.io/?https://github.com/tibs/venv-intro/blob/master/venv-intro-notes.html
 
 Changes since the workshop
 ==========================
