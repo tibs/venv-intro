@@ -46,6 +46,7 @@ I've altered some things as a result of feedback from the workshop:
   * Briefly mention the Enthought Tool Suite's ``edm`` tool, since I mention
     ``conda``.
   * Briefly mention git bash on Windows - it *should* work.
+  * Change my advice on ignoring ``venv`` in a project ``.gitignore`` file.
 
 --------
 

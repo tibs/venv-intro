@@ -1709,15 +1709,13 @@ file - for instance::
 
   /venv/
 
-(altering to match the actual name of the directory).
+or whatever name you are actually using. In particular, the names ``venv`` and
+``.venv`` appear to be commonly used, so are reasonable to ignore in general.
 
+The github `example .gitignore for Python` contains ``.venv``, ``venv``
+and other variations.
 
-  **Is the next bit good advice?**
-  
-  *However* if your git repository is shared with anyone else, you might not
-  want to assume that everyone uses the same venv directory name. In that case,
-  it may be to put it into a top-level ``.gitignore`` (e.g., ``~/.gitignore``)
-  instead.
+.. _`example .gitignore for Python`: https://github.com/github/gitignore/blob/master/Python.gitignore
 
 The ``--system-site-packages`` switch
 =====================================
